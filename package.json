@@ -1,0 +1,39 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/gloomysergei/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/gloomysergei/frontend-project-lvl2/actions)",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gloomysergei/frontend-project-lvl2.git"
+  },
+  "author": "Sergei Jkovlev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gloomysergei/frontend-project-lvl2/issues"
+  },
+  "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "homepage": "https://github.com/gloomysergei/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^7.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@jest/globals": "^26.6.2",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.5",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3"
+  }
+}
