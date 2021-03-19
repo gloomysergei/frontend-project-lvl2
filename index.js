@@ -1,5 +1,6 @@
 import { Command } from 'commander';
-import compareJsonFile from './compareJsonFile.js';
+import readFile from './src/getFixtures.js';
+import compareJsonFile from './src/compareJsonFile.js';
 
 const commander = new Command();
 
@@ -10,7 +11,11 @@ function finddiff() {
     .arguments('<firstFile>  <secondFile>')
     .option('-f, --format [type]', 'output format')
     .action((firstFile, secondFile) => {
-      const str = compareJsonFile(firstFile, secondFile);
+      const readFirstFile = readFile(firstFile);
+      const readSecondFile = readFile(secondFile);
+      const file1 = JSON.parse(readFirstFile);
+      const file2 = JSON.parse(readSecondFile);
+      const str = compareJsonFile(file1, file2);
       console.log(str);
     });
   commander.parse(process.argv);

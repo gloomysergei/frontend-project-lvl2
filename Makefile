@@ -1,9 +1,11 @@
-install:
-	npm install
+install: install-deps
 
 gendiff:
 	node bin/gendiff.js
 
+install-deps:
+	npm ci 
+	
 test:
 	npm test
 
@@ -15,3 +17,5 @@ lint:
 
 publish:
 	npm publish --dry-run
+
+.PHONY: test
