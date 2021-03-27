@@ -19,6 +19,8 @@
 
 ## Сравнение файлов в формате yaml
 ### Запуск утилиты `$ gendiff data1.yml data2.yml`
+[![Аскинема](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU.svg)](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU)
+
 
 
 
