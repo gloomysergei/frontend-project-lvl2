@@ -1,5 +1,5 @@
 import compareFiles from '../src/compareFiles.js';
-import parse from '../src/parse.js';
+import parse from '../src/parses.js';
 
 test('comparing flat json-files', () => {
   const file1 = parse('data1.json');

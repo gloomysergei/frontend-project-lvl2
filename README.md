@@ -14,8 +14,11 @@
 [![Аскинема]( https://asciinema.org/a/Nxi1NYX4ktwfxB0twopW92MP7.svg)]( https://asciinema.org/a/Nxi1NYX4ktwfxB0twopW92MP7)
 
 ## Сравнение файлов в формате json
-### Запуск утилиты $ gendiff data1.json data2.json
+### Запуск утилиты `$ gendiff data1.json data2.json`
 [![Аскинема]( https://asciinema.org/a/McQ0d9La59a5yh5JwGQjkIpvZ.svg)](https://asciinema.org/a/McQ0d9La59a5yh5JwGQjkIpvZ)
+
+## Сравнение файлов в формате yaml
+### Запуск утилиты `$ gendiff data1.yml data2.yml`
 
 
 

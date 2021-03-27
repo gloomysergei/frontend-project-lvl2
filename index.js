@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import compareFiles from './src/compareFiles.js';
-import parse from './src/parse.js';
+import parse from './src/parses.js';
 
 const commander = new Command();
 
