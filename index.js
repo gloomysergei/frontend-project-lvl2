@@ -1,21 +1,16 @@
-import { Command } from 'commander';
-import compareFiles from './src/compareFiles.js';
+import { getFormat, getFileContents } from './src/fileReader.js';
+import format from './src/format.js';
 import parse from './src/parses.js';
+import result from './src/build.js';
 
-const commander = new Command();
-
-function finddiff() {
-  commander
-    .version('1.0.0')
-    .description('Compares two configuration files and shows a difference.')
-    .arguments('<firstFile>  <secondFile>')
-    .option('-f, --format [type]', 'output format')
-    .action((firstFile, secondFile) => {
-      const file1 = parse(firstFile);
-      const file2 = parse(secondFile);
-      const str = compareFiles(file1, file2);
-      console.log(str);
-    });
-  commander.parse(process.argv);
+function finddiff(firstFile, secondFile, outputFormat = 'stylish') {
+  const firstContent = getFileContents(firstFile);
+  const secondContent = getFileContents(secondFile);
+  const firstFormat = getFormat(firstFile);
+  const secondFormat = getFormat(secondFile);
+  const obj1 = parse(firstContent, firstFormat);
+  const obj2 = parse(secondContent, secondFormat);
+  const differenceTree = result(obj1, obj2);
+  return format(differenceTree, outputFormat);
 }
 export default finddiff;

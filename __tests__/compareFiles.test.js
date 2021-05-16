@@ -1,26 +1,29 @@
-import compareFiles from '../src/compareFiles.js';
-import parse from '../src/parses.js';
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
+import { fileURLToPath } from 'url';
+import stylish from '../src/stylish.js';
+import result from '../src/build.js';
 
-test('comparing flat json-files', () => {
-  const file1 = parse('data1.json');
-  const file2 = parse('data2.json');
-  const difference = compareFiles(file1, file2);
-  expect(difference).toMatch('   host: hexlet.io');
-  expect(difference).toMatch(' - timeout: 50');
-  expect(difference).toMatch(' + timeout: 20');
-  expect(difference).toMatch(' - proxy: 123.234.53.22');
-  expect(difference).toMatch(' - follow: false');
-  expect(difference).toMatch(' + verbose: true');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+
+test('comparing nested json-files', () => {
+  const nestedData = fs.readFileSync(getFixturePath('nested.txt'), 'utf-8');
+  const data1 = JSON.parse(fs.readFileSync(getFixturePath('data1.json'), 'utf-8'));
+  const data2 = JSON.parse(fs.readFileSync(getFixturePath('data2.json'), 'utf-8'));
+  const buildAst = result(data1, data2);
+  const actual = stylish(buildAst);
+
+  expect(actual).toEqual(nestedData);
 });
 
-test('comparing flat yaml-files', () => {
-  const file1 = parse('data1.yml');
-  const file2 = parse('data2.yml');
-  const difference = compareFiles(file1, file2);
-  expect(difference).toMatch('   host: hexlet.io');
-  expect(difference).toMatch(' - timeout: 50');
-  expect(difference).toMatch(' + timeout: 20');
-  expect(difference).toMatch(' - proxy: 123.234.53.22');
-  expect(difference).toMatch(' - follow: false');
-  expect(difference).toMatch(' + verbose: true');
+test('comparing nested yml-files', () => {
+  const nestedData = fs.readFileSync(getFixturePath('nested.txt'), 'utf-8');
+  const data1 = yaml.load(fs.readFileSync(getFixturePath('data1.yml'), 'utf-8'));
+  const data2 = yaml.load(fs.readFileSync(getFixturePath('data2.yml'), 'utf-8'));
+  const buildAst = result(data1, data2);
+  const actual = stylish(buildAst);
+
+  expect(actual).toEqual(nestedData);
 });
