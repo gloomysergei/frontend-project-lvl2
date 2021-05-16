@@ -21,6 +21,11 @@
 ### Запуск утилиты `$ gendiff data1.yml data2.yml`
 [![Аскинема](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU.svg)](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU)
 
+## Рекурсивное сравнение форматов json, yml
+[![Аскинема](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q.svg)](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q
+)
+
+
 
 
 
