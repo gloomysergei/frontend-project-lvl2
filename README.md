@@ -22,8 +22,11 @@
 [![Аскинема](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU.svg)](https://asciinema.org/a/Z8wpbzKHYlrPdfvEuhQyagCCU)
 
 ## Рекурсивное сравнение форматов json, yml
-[![Аскинема](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q.svg)](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q
-)
+[![Аскинема](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q.svg)](https://asciinema.org/a/xA59tfcf1dG1nLMXomkidVR1q)
+
+## Реализация форматера plain.js
+[![Аскинема](https://asciinema.org/a/EI0H02xqv71ZCOMe6UkZTSPmM.svg)](https://asciinema.org/a/EI0H02xqv71ZCOMe6UkZTSPmM)
+
 
 
 
