@@ -1,5 +1,5 @@
 import { getFormat, getFileContents } from './src/fileReader.js';
-import format from './src/format.js';
+import format from './src/formatters/index.js';
 import parse from './src/parses.js';
 import result from './src/build.js';
 
