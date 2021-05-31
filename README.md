@@ -27,9 +27,7 @@
 ## Реализация форматера plain.js
 [![Аскинема](https://asciinema.org/a/EI0H02xqv71ZCOMe6UkZTSPmM.svg)](https://asciinema.org/a/EI0H02xqv71ZCOMe6UkZTSPmM)
 
-
-
-
-
+## Реализация вывода в json
+[![Аскинема]( https://asciinema.org/a/5DGh82ibudvsNAsSDfkFLZFuJ.svg)]( https://asciinema.org/a/5DGh82ibudvsNAsSDfkFLZFuJ)
 
 
