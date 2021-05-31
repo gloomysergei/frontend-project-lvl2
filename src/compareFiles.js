@@ -17,17 +17,3 @@ const compareFile = (data1, data2) => {
   return (`{\n ${diff.join('')}}\n`);
 };
 export default compareFile;
-
-/**
- * key: deleted - ключ есть в первом файле, но отсутствует во втором - '-'
- * key: added -   ключ отсутствует   в первом файле, но ecть во втором - '+'
- * key: unchanged - ключ есть в первом и втором файле с одинаковыми значениями - ''
- * key: changed - ключ есть в первом и втором файле с разными значениями значениями
- *      - timeout: 'oldValue'
-        + timeout: 'newValue'
-   key: nested - если есть children.
- */
-
-/**
- * {key: '', value: '', type: '' }
- */

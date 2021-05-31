@@ -5,6 +5,12 @@ const format = (data, outputFormat) => {
   if (outputFormat === 'stylish') {
     return stylish(data);
   }
-  return parsePlain(data);
+  if (outputFormat === 'plain') {
+    return parsePlain(data);
+  }
+  if (outputFormat === 'json') {
+    return JSON.stringify(data, null, 2);
+  }
+  throw new Error(`Invalid format type '${outputFormat}`);
 };
 export default format;

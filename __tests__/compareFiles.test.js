@@ -39,3 +39,12 @@ test('output in format plain.txt', () => {
 
   expect(actual).toEqual(parsePlainData);
 });
+
+test('output in format json', () => {
+  const jsonFormat = fs.readFileSync(getFixturePath('jsonFormat.json'), 'utf-8');
+  const data1 = JSON.parse(fs.readFileSync(getFixturePath('data1.json'), 'utf-8'));
+  const data2 = JSON.parse(fs.readFileSync(getFixturePath('data2.json'), 'utf-8'));
+  const buildAst = result(data1, data2);
+  const actual = JSON.stringify(buildAst, null, 2);
+  expect(actual).toEqual(jsonFormat);
+});

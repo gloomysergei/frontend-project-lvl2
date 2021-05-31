@@ -6,19 +6,16 @@ const propertyActions = [
     check: (obj1, obj2, key) => _.isObject(obj1[key]) && _.isObject(obj2[key]),
     process: (obj1, obj2, f) => f(obj1, obj2),
   },
-  // Ключ есть в 1-ом объекте, но нет во 2-ом
   {
     type: 'deleted',
     check: (obj1, obj2, key) => _.has(obj1, key) && !_.has(obj2, key),
     process: (obj1, obj2, key) => obj1[key],
   },
-  // Ключа  нет в 1-ом объекте, но есть во 2-ом
   {
     type: 'added',
     check: (obj1, obj2, key) => !_.has(obj1, key) && _.has(obj2, key),
     process: (obj1, obj2, key) => obj2[key],
   },
-  // значения не совпадают
   {
     type: 'changed',
     check: (obj1, obj2, key) => _.has(obj1, key) && _.has(obj2, key) && obj1[key] !== obj2[key],
@@ -47,10 +44,6 @@ const buildAST = (obj1, obj2) => {
   });
   return result;
 };
-// const arr = (buildAST(file1, file2));
-// console.log(JSON.stringify(arr, null, 2));
-
-// export default buildAST;
 export default (obj1, obj2) => ({
   type: 'root',
   children: buildAST(obj1, obj2),
