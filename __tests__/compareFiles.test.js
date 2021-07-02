@@ -1,14 +1,15 @@
 import fs from 'fs';
-import path from 'path';
 import yaml from 'js-yaml';
 import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { expect } from '@jest/globals';
 import stylish from '../src/formatters/stylish.js';
 import result from '../src/build.js';
 import parsePlain from '../src/formatters/plain';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
 
 test('comparing nested json-files', () => {
   const nestedData = fs.readFileSync(getFixturePath('nested.txt'), 'utf-8');
