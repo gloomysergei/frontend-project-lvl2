@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-import { Command } from 'commander';
+import programm from 'commander';
 import finddiff from '../index.js';
 
-const commander = new Command();
-commander
+programm
   .version('1.0.0')
   .description('Compares two configuration files and shows a difference.')
   .arguments('<firstFile> <secondFile>')
@@ -12,4 +11,4 @@ commander
     const diff = finddiff(firstFile, secondFile, options.format);
     console.log(diff);
   });
-commander.parse(process.argv);
+programm.parse(process.argv);
